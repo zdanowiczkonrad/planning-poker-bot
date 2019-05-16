@@ -1,7 +1,8 @@
-# Planning poker bot
+# Planning Poker bot
 
 Instead of paying attention, you can just post random estimates. Will anybody even notice? Or are you a fan of #NoEstimates? Or you are a remote and you have a super boring planning session on Slack, while at the same time there's a new GoT episode on the torrents ready to watch?
 
+  **I am ready. Take me to the [Planning Poker Bot](https://zdanowicz.dev/planning-poker-bot/index.html)!**
 ## Challenge
 
 Post only messages from the planning poker bot on the whole planning session (estimation part at least). Send me screenshots and after the community verification you'll be granted a special entry in the *h*all of fame*
