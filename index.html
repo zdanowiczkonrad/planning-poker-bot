@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style type="text/css">
+* { 
+    font-family: Helvetica;
+}
+input {
+    font-size: 20px;
+    width: 200px;
+}
+button {
+    background: red;
+    color: white;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 4px 10px;
+}
+
+#myvote {
+    border: 1px #eee solid;
+    padding: 10px;
+    font-size: 18px;
+    background: #eee;
+}
+</style>
+<body>
+
+    <h1>Automated planning bot</h1>
+
+    <strong>How smart you are?</strong><br/><br/>
+    junior <input type="range" min="0" max="1" step="0.1" value="0.3"/> senior<br/><br/>
+    <button>Vote</button><br/><br/>
+     <div  id="myvote">
+
+
+<script>
+        function planning(howSmartAreYou) /* howSmartAreYou: 0 - no smart, 0.5 - sometimes smart, 1 - super smart*/ {
+        var rand = (arr) => arr[Math.floor(Math.random(Math.random())*arr.length)];
+        var one = ['Looking at', 'Tricky one. Because of', 'It really depends. If you look at', 'I have concerns of','hm when you think about'];
+        var two = ['how functional requirements are usually written','our tendency to scope-creep and we misunderstanding the specs', 'the vacation schedule and what is on the roadmap', 'the current workload and velocity from past two sprints','impact of this code on the critical path', 'the code quality and test coverage around this module','our resources - not all of us are available this sprint'];
+        var three = [' I think this may be $$.','  - $$ from me...',', it could be $$ as well as much more. A bit of a guess', ' I think it is $$... but maybe we should put a safety buffer', ', $$ from me.'];
+        var four = ['1','2','3','1','2','1','2/3','trivial','3','5','8'];
+        var smart = ['1. YOLO :joy:','Are these even requirements? looks like a draft', 'I am challenging how we approach this planning. shouldnt we think a bit smarter about what is actually _needed_, not what we think is cool?','a break? I think we need to freshen our minds a bit', 'Isnt that too big to estimate? I think we can break this up a bit','Not the area of the code I like... who even built that? maybe lets ask him first','Hang on a sec. I need to double read that...', "Haven't we discussed sth similar like two months ago? How is that different?", 'It really requires looking at the code.'];
+        return Math.random() > (howSmartAreYou) ? rand(four) : Math.random() > 0.8 ? rand(smart) : rand(one)+' '+rand(two)+rand(three).replace('$$',rand(four));
+    }
+    document.querySelector('button').addEventListener('click',function() {
+        document.querySelector('#myvote').innerHTML = planning(document.querySelector('input[type=range]').value);
+    });
+    </script>
+</body>
+</html>
