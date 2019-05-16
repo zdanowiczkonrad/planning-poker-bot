@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Planning poker bot</title>
 </head>
 <style type="text/css">
 * { 
@@ -48,7 +48,7 @@ button {
         var two = ['how functional requirements are usually written','our tendency to scope-creep and we misunderstanding the specs', 'the vacation schedule and what is on the roadmap', 'the current workload and velocity from past two sprints','impact of this code on the critical path', 'the code quality and test coverage around this module','our resources - not all of us are available this sprint'];
         var three = [' I think this may be $$.','  - $$ from me...',', it could be $$ as well as much more. A bit of a guess', ' I think it is $$... but maybe we should put a safety buffer', ', $$ from me.'];
         var four = ['1','2','3','1','2','1','2/3','trivial','3','5','8'];
-        var smart = ['1. YOLO :joy:','Are these even requirements? looks like a draft', 'I am challenging how we approach this planning. shouldnt we think a bit smarter about what is actually _needed_, not what we think is cool?','a break? I think we need to freshen our minds a bit', 'Isnt that too big to estimate? I think we can break this up a bit','Not the area of the code I like... who even built that? maybe lets ask him first','Hang on a sec. I need to double read that...', "Haven't we discussed sth similar like two months ago? How is that different?", 'It really requires looking at the code.'];
+        var smart = ['1. YOLO :joy:','Are these even requirements? looks like a draft', 'I am challenging how we approach this planning. shouldnt we think a bit smarter about what is actually _needed_, not what we think is cool?','a break? I think we need to freshen our minds a bit', 'sorry guys, I think we voted on this already.', 'Can we check with the product if that is up to date?', 'Isnt that too big to estimate? I think we can break this up a bit','Not the area of the code I like... who even built that? maybe lets ask him first','Hang on a sec. I need to double read that...', "Haven't we discussed sth similar like two months ago? How is that different?", 'It really requires looking at the code.'];
         return Math.random() > (howSmartAreYou) ? rand(four) : Math.random() > 0.8 ? rand(smart) : rand(one)+' '+rand(two)+rand(three).replace('$$',rand(four));
     }
     document.querySelector('button').addEventListener('click',function() {
